@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:image2text/constants.dart';
@@ -28,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
   loadBannerAd() {
     bannerAd = BannerAd(
       size: AdSize.largeBanner,
-      adUnitId: kidTestBAd,
+      adUnitId: kidBannerAd,
       listener: BannerAdListener(onAdLoaded: (ad) {
         setState(() {
           isBannerLoaded = true;
@@ -86,7 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         backgroundColor: const Color(0xFF412795),
         centerTitle: true,
-        title: Text('DOCR'),
+        title: const Text('DOCR'),
       ),
       body: Container(
         decoration: const BoxDecoration(
@@ -155,10 +154,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Expanded(
                                   child: HomeCard(
                                     onTap: () async {
-                                      if (adsBrain.isInterstitialLoaded)
+                                      if (adsBrain.isInterstitialLoaded) {
                                         adsBrain.interstitialAd?.show();
-                                      else
+                                      } else {
                                         adsBrain.loadInterstitialAd();
+                                      }
                                     },
                                     sWidth: sWidth,
                                     text: 'more\ncoming\nsoon!',
@@ -172,7 +172,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   isBannerLoaded
-                      ? Container(
+                      ? SizedBox(
                           height: 100,
                           child: AdWidget(ad: bannerAd!),
                         )

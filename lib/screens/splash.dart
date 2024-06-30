@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
 
   loadAppOpenAd() {
     AppOpenAd.load(
-      adUnitId: kidTestOAd,
+      adUnitId: kidOpenAd,
       request: const AdRequest(),
       adLoadCallback: AppOpenAdLoadCallback(
         onAdLoaded: (ad) {

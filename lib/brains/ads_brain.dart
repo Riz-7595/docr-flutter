@@ -7,7 +7,7 @@ class ADSBrain {
 
   loadInterstitialAd() async {
     InterstitialAd.load(
-      adUnitId: kidTestIAd,
+      adUnitId: kidInterAd,
       request: const AdRequest(),
       adLoadCallback: InterstitialAdLoadCallback(
         onAdLoaded: (ad) {

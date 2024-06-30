@@ -65,7 +65,7 @@ class _ResultScreenState extends State<ResultScreen> {
         ),
         backgroundColor: const Color(0xFF412795),
         centerTitle: true,
-        title: Text('RESULT'),
+        title: const Text('RESULT'),
       ),
       body: Container(
         decoration: const BoxDecoration(
@@ -96,7 +96,7 @@ class _ResultScreenState extends State<ResultScreen> {
                           ? TextFormField(
                               initialValue: myText,
                               textAlign: TextAlign.justify,
-                              style: TextStyle(fontFamily: ''),
+                              style: const TextStyle(fontFamily: ''),
                               decoration: InputDecoration(
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(32.0),
